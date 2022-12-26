@@ -1,0 +1,12 @@
+def dump_datetime(value):
+    """Deserialize datetime object into string form for JSON processing."""
+    if value is None:
+        return None
+    return value.strftime("%Y-%m-%d") + " " + value.strftime("%H:%M")
+
+
+def checkOrdersActive(orders):
+    for order in orders:
+        if (order.isActive):
+            return False
+    return True
